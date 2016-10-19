@@ -95,8 +95,8 @@ public class OidcAccessTokenResponseGenerator extends OAuth20AccessTokenResponse
         claims.setJwtId(UUID.randomUUID().toString());
         claims.setIssuer(this.issuer);
         claims.setAudience(service.getClientId());
-		
-		NumericDate expirationDate = NumericDate.now().addSeconds(timeout);
+
+        NumericDate expirationDate = NumericDate.now().addSeconds(timeout);
         claims.setExpirationTime(expirationDate);
         claims.setIssuedAtToNow();
         claims.setNotBeforeMinutesInThePast(this.skew);
